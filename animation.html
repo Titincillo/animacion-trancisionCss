@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Translate</title>
+	<style>
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			color: white;
+			font-family: Arial;
+		}
+		.container{
+			border: 1px solid red;
+			width: 100%;
+
+		}
+		.container:hover .square{
+			transform-origin:right top;
+			animation-play-state: paused;
+		}
+		.square{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border:1px solid #ddd;
+			background: #7dc900;
+			margin: 20px;
+			/*transition: .8s;*/
+			animation-name:square;
+			animation-duration: 2s;
+			animation-iteration-count: infinite; ; //5 veces o infinite
+			animation-timing-function: ease;
+			animation-direction: alternate; 
+			/*animation-fill-mode: forwards;  //como queda luego de que termina la animacion*/
+			/*animation-delay: 1s;*/
+			position: relative;
+		}
+		@keyframes square{
+			0%{
+				/*opacity: 1;*/
+				left: 0;
+			}
+			100%{
+				/*opacity: 0;*/
+				left: calc(100% - 230px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="square">Hola Mundo</div>
+	</div>
+	
+	
+</body>
+</html>
